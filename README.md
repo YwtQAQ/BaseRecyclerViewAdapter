@@ -19,7 +19,7 @@ allprojects {
 仅支持`AndroidX`
 ```
 dependencies {
-    implementation 'com.github.Ywt0328:BaseRecyclerViewAdapter:1.0.1'
+    implementation 'com.github.Ywt0328:BaseRecyclerViewAdapter:1.0.2'
 }
 ```
 
