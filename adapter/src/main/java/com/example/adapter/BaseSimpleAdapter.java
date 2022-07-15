@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.adapter;
 
 import android.content.Context;
 import android.os.Build;
@@ -55,7 +55,8 @@ public abstract class BaseSimpleAdapter<T,VH extends BaseSimpleViewHolder> exten
         Class<VH> vhClass = getTClass();//反射 获取泛型实例
         try {
             //反射构造函数  https://www.jb51.net/article/233598.htm
-            Constructor<VH> c = vhClass.getConstructor(View.class);
+            Constructor<VH> c = vhClass.getDeclaredConstructor(View.class);
+            c.setAccessible(true);
             VH viewHolder = c.newInstance(view);
             bindViewClickListener(viewHolder);
             return viewHolder;//使用构造函数创建实例
@@ -99,15 +100,15 @@ public abstract class BaseSimpleAdapter<T,VH extends BaseSimpleViewHolder> exten
         }
     }
 
-    void setData(List<T> list){
+    public void setData(List<T> list){
         this.list = list;
         notifyDataSetChanged();
     }
 
-    interface ItemChildClickListener{
+    public interface ItemChildClickListener{
         void click(View view);
     }
-    interface ItemClickListener{
+    public interface ItemClickListener{
         void click(View view);
     }
 }

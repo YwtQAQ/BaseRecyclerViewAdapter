@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.adapter.BaseSimpleAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 

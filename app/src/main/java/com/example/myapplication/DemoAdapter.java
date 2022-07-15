@@ -5,6 +5,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.adapter.BaseSimpleAdapter;
+import com.example.adapter.BaseSimpleViewHolder;
 
 public class DemoAdapter extends BaseSimpleAdapter<String, DemoAdapter.ViewHolder> {
 
@@ -17,7 +21,7 @@ public class DemoAdapter extends BaseSimpleAdapter<String, DemoAdapter.ViewHolde
         holder.textView.setText(data);
     }
 
-    class ViewHolder extends BaseSimpleViewHolder {
+    static class ViewHolder extends BaseSimpleViewHolder {
 
         TextView textView;
 
