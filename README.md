@@ -15,7 +15,7 @@ allprojects {
 ```
 
 ### 添加依赖项
-[![](https://jitpack.io/v/CymChad/BaseRecyclerViewAdapterHelper.svg)](https://jitpack.io/#CymChad/BaseRecyclerViewAdapterHelper)
+[![](https://jitpack.io/v/CymChad/BaseRecyclerViewAdapterHelper.svg)](https://jitpack.io/#YwtQAQ/BaseRecyclerViewAdapter)
 仅支持`AndroidX`
 ```
 dependencies {
