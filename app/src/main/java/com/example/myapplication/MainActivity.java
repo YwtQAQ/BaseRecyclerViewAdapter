@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
         demoAdapter = new DemoAdapter(R.layout.item_news,this);
         recyclerView.setAdapter(demoAdapter);
 
+        //设置点击事件
         initListener();
+        //初始化数据
         initData();
     }
 
