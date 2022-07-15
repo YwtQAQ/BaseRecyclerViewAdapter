@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 import android.content.Context;
 import android.os.Build;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,7 @@ import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class MyBaseAdapter<T,VH extends MyBaseViewHolder> extends RecyclerView.Adapter<VH> {
+public abstract class BaseSimpleAdapter<T,VH extends BaseSimpleViewHolder> extends RecyclerView.Adapter<VH> {
 
     private List<T> list;
     private int resId;
@@ -25,7 +24,7 @@ public abstract class MyBaseAdapter<T,VH extends MyBaseViewHolder> extends Recyc
     private ItemChildClickListener itemChildClickListener;
     private ItemClickListener itemClickListener;
 
-    public MyBaseAdapter(int resId, Context context) {
+    public BaseSimpleAdapter(int resId, Context context) {
         this.resId = resId;
         this.context = context;
     }

@@ -6,9 +6,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-public class NewsAdapter extends MyBaseAdapter<String, NewsAdapter.ViewHolder>{
+public class DemoAdapter extends BaseSimpleAdapter<String, DemoAdapter.ViewHolder> {
 
-    NewsAdapter(int resId, Context context) {
+    DemoAdapter(int resId, Context context) {
         super(resId, context);
     }
 
@@ -17,7 +17,7 @@ public class NewsAdapter extends MyBaseAdapter<String, NewsAdapter.ViewHolder>{
         holder.textView.setText(data);
     }
 
-    class ViewHolder extends MyBaseViewHolder {
+    class ViewHolder extends BaseSimpleViewHolder {
 
         TextView textView;
 

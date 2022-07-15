@@ -9,17 +9,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.viewholder.BaseViewHolder;
-
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 示例
+ */
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    NewsAdapter newsAdapter;
-    Mode mode;
+    DemoAdapter demoAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,26 +27,23 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        newsAdapter = new NewsAdapter(R.layout.item_news,this);
-        recyclerView.setAdapter(newsAdapter);
+        demoAdapter = new DemoAdapter(R.layout.item_news,this);
+        recyclerView.setAdapter(demoAdapter);
 
         initListener();
         initData();
-
-//        BaseQuickAdapter adapter;
-//        adapter.addHeaderView();
     }
 
     private void initListener(){
-        newsAdapter.addChildClickViewIds(R.id.imageView,R.id.textView);
+        demoAdapter.addChildClickViewIds(R.id.imageView,R.id.textView);
 
-        newsAdapter.setItemClickListener(new MyBaseAdapter.ItemClickListener() {
+        demoAdapter.setItemClickListener(new BaseSimpleAdapter.ItemClickListener() {
             @Override
             public void click(View view) {
                 Toast.makeText(MainActivity.this, "item点击", Toast.LENGTH_SHORT).show();
             }
         });
-        newsAdapter.setItemChildClickListener(new MyBaseAdapter.ItemChildClickListener() {
+        demoAdapter.setItemChildClickListener(new BaseSimpleAdapter.ItemChildClickListener() {
             @Override
             public void click(View view) {
                 switch (view.getId()){
@@ -70,21 +66,6 @@ public class MainActivity extends AppCompatActivity {
         list.add("333");
         list.add("444");
         list.add("555");
-        newsAdapter.setData(list);
-    }
-
-    public void setMode(Mode mode){
-        switch (mode){
-            case create:
-                Log.e("create","");
-                break;
-            case update:
-                Log.e("update","");
-                break;
-        }
-    }
-
-    enum Mode{
-        create,update
+        demoAdapter.setData(list);
     }
 }
